@@ -22,6 +22,33 @@ public class TimeAList {
     }
 
     public static void timeAListConstruction() {
-        // TODO: YOUR CODE HERE
+        AList<Integer> Ns = new AList<>();
+        AList<Double> times = new AList<>();
+        AList<Integer> opCounts = new AList<>();
+        // 2. Define the sizes of N we want to test
+        // Starting at 1000 and doubling up to 128000
+        for (int N = 1000; N <= 128000; N = N * 2) {
+
+            // 3. Create a fresh AList to test
+            AList<Integer> testList = new AList<>();
+
+            // 4. Start the timer
+            edu.princeton.cs.algs4.Stopwatch sw = new edu.princeton.cs.algs4.Stopwatch();
+
+            // 5. Perform the operations
+            for (int i = 0; i < N; i += 1) {
+                testList.addLast(i);
+            }
+
+            // 6. Stop the timer (get elapsed time)
+            double timeInSeconds = sw.elapsedTime();
+
+            // 7. Store the results in our tracking lists
+            Ns.addLast(N);
+            times.addLast(timeInSeconds);
+            opCounts.addLast(N);
+        }
+        // 8. Print the table
+        printTimingTable(Ns, times, opCounts);
     }
 }
