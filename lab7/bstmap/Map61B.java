@@ -7,7 +7,8 @@ import java.util.Set;
  * declaration, though you can use other formal type parameters if you'd like.
  */
 public interface Map61B<K, V> extends Iterable<K> {
-
+//任何实现 Map61B 接口的类（比如你的 BSTMap），都必须能够提供一个 java.util.Iterator<K> 类型的迭代器。
+    // 这个迭代器将用于遍历 Map 中所有的键（Key），因为泛型参数是 <K>。
     /** Removes all of the mappings from this map. */
     void clear();
 
